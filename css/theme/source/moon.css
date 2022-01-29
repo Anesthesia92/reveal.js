@@ -26,9 +26,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-main-color: #27b6a7;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: League Gothic, Impact, sans-serif;
-  --r-heading-color: #74b2a4;
-  --r-heading-line-height: 1;
+  --r-heading-font: 'Source Sans Pro', Helvetica, sans-serif;
+  --r-heading-color: #bafaee;
+  --r-heading-line-height: 1.7;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
   --r-heading-text-shadow: none;
@@ -180,7 +180,6 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal ol ol,
 .reveal ol ul {
   display: flex;
-  justify-content: space-around;
   margin-left: 40px;
 
 }
@@ -303,6 +302,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal img {
   margin: var(--r-block-margin) 0;
+}
+.reveal li {
+  text-decoration: none;
 }
 
 /*********************************************
