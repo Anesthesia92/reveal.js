@@ -1,40 +1,67 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="EN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>reveal.js</title>
+<!--    <link rel="stylesheet" href="dist/reset.css">-->
+<!--    <link rel="stylesheet" href="dist/reveal.css">-->
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/source/moon.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-		<title>reveal.js</title>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section class="present fragment.highlight-current-green.current-fragment">
+            <img src="./examples/assets/1_uqBah-AUTg9MDdgJDztb2w.png" style="height: 200px;" alt="present">
+            <H1>Angular and RxJS</H1>
+            <p>prepared by Anastasiia Meshechak</p>
+        </section>
+        <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade" data-fragment="-1">
+            <h4 style="color: whitesmoke">There are 4 ways to do observables in Angular:</h4>
+            <ul data-fragment-index="0" class="fragment">
+                <li>Using one of several features in Angular that generate observables</li>
+                <li>Using a library that works with Angular</li>
+                <li>sing an RxJS creation operator</li>
+                <li>Using an RxJS subject</li>
+            </ul>
+        </section>
+        <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade" data-fragment="0">
+            <p style="color: whitesmoke">There are 4 ways to do observables in Angular:</p>
+            <ul data-fragment-index="0" class="fragment visible current-fragment">
+                <li>Using one of several features in Angular that generate observables</li>
+                <li>Using a library that works with Angular</li>
+                <li>sing an RxJS creation operator</li>
+                <li>Using an RxJS subject</li>
+            </ul>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>Auto-Animate Example</h3>
+            <p style="opacity: 0.2; margin-top: 100px;">This will fade out</p>
+            <p>This element is unmatched</p>
+            <img src="examples/assets/image1.png" style="height: 150px;">
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						function Example() {
+						  New line!
+						  const [count, setCount] = useState(0);
+						}
+					</code></pre>
+        </section>
+    </div>
+</div>
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-				<section>Slide 3</section>
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    Reveal.initialize({
+        hash: true,
+        center: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
 </html>

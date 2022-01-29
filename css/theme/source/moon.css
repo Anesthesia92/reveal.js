@@ -1,5 +1,5 @@
 /**
- * Solarized Light theme for reveal.js.
+ * Solarized Dark theme for reveal.js.
  * Author: Achim Staebler
  */
 @import url(./fonts/league-gothic/league-gothic.css);
@@ -12,25 +12,29 @@ html * {
   rendering-intent: auto;
 }
 
+section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+  color: #74b2a4;
+}
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #fdf6e3;
+  --r-background-color: #002b36;
   --r-main-font: Lato, sans-serif;
   --r-main-font-size: 40px;
-  --r-main-color: #d2f5ea;
+  --r-main-color: #27b6a7;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: League Gothic, Impact, sans-serif;
-  --r-heading-color: #586e75;
-  --r-heading-line-height: 1.2;
+  --r-heading-color: #74b2a4;
+  --r-heading-line-height: 1;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
   --r-heading1-text-shadow: none;
-  --r-heading1-size: 3.77em;
+  --r-heading1-size: 2.5em;
   --r-heading2-size: 2.11em;
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
@@ -38,12 +42,12 @@ html * {
   --r-link-color: #268bd2;
   --r-link-color-dark: #1a6091;
   --r-link-color-hover: #78b9e6;
-  --r-selection-background-color: #d33682;
+  --r-selection-background-color: #d2f5ea;
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #fdf6e3;
+  background: #002b36;
   background-color: var(--r-background-color);
 }
 
@@ -175,8 +179,10 @@ html * {
 .reveal ul ol,
 .reveal ol ol,
 .reveal ol ul {
-  display: block;
+  display: flex;
+  justify-content: space-around;
   margin-left: 40px;
+
 }
 
 .reveal dt {
@@ -359,3 +365,5 @@ html * {
     background-color: var(--r-background-color);
   }
 }
+
+/*# sourceMappingURL=moon.css.map */
