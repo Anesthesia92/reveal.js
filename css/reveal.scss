@@ -1703,7 +1703,7 @@ $notesWidthPercent: 25%;
 // An interface element that can optionally be used to show the
 // speaker notes to all viewers, on top of the presentation
 .reveal .speaker-notes {
-	display: none;
+
 	position: absolute;
 	width: math.div($notesWidthPercent, (1 - math.div($notesWidthPercent,100))) * 1%;
 	height: 100%;

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>reveal.js</title>
-<!--    <link rel="stylesheet" href="dist/reset.css">-->
-<!--    <link rel="stylesheet" href="dist/reveal.css">-->
+    <!--    <link rel="stylesheet" href="dist/reset.css">-->
+    <!--    <link rel="stylesheet" href="dist/reveal.css">-->
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/source/moon.css">
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -17,43 +17,96 @@
         <section class="present fragment.highlight-current-green.current-fragment">
             <img src="./examples/assets/1_uqBah-AUTg9MDdgJDztb2w.png" style="height: 200px;" alt="present">
             <H1>Angular and RxJS</H1>
-            <p>prepared by Anastasiia Meshechak</p>
+            <p>Prepared by Anastasiia Meshechak</p>
+            <aside class="notes">slide 1</aside>
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade">
-            <p style="color: whitesmoke">There are 4 ways to create observables in Angular:</p>
+            <p>There are 4 ways to create observables in Angular:</p>
             <ul data-fragment-index="0" class="fragment">
                 <li>Using one of several features in Angular that generate observables</li>
                 <li>Using a library that works with Angular</li>
-                <li>sing an RxJS creation operator</li>
-                <li>Using an RxJS subject</li>
+                <li>Using a RxJS creation operator</li>
+                <li>Using a RxJS subject</li>
             </ul>
+            <aside class="notes">slide 2</aside>
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade">
-<h3>Why should we use <a href="#https://angular.io/guide/rx-library#the-rxjs-library">RxJS</a>?</h3>
+            <h3>Why should we use <a href="#https://angular.io/guide/rx-library#the-rxjs-library">RxJS</a>?</h3>
+            <img src="./examples/assets/Rx_Logo.png" alt="Rx-logo" style="height: 300px;">
+            <aside class="notes">slide 3</aside>
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade"
                  data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
             <script type="text/template">
                 ## Reactive Extensions for JavaScript
-                Is a library for reactive programming
-                It composes asynchronous and event-based programs by using observable sequences
+                RxJS offers some functions that can be used to create new observables.
+                <br>These functions can simplify the process of creating observables from events, timers, promises.
+
+                <aside class="notes">slide 4.1</aside>
 
                 --
 
-                ## RxJS provides
-                <br>one core type
-                <br>the Observable
-                <br>satellite types: Observer, Schedulers, Subjects
-                <br>operators such as map(), filter(), concat(), flatMap()
+                ## RxJS provides:
+                <ul>
+                    <li>one core type</li>
+                    <li>the Observable</li>
+                    <li>satellite types: Observer, Schedulers, Subjects</li>
+                    <li>operators: map(), filter(), concat(), flatMap()</li>
+                </ul>
+                <aside class="notes">slide 4.2</aside>
+
+                --
+
+                ## For example:
+                <p>Create an observable from a promise</p>
+                <pre class="code-wrapper visible current-fragment" data-fragment-index="1">
+                      <code data-trim="" data-noescape="" class="hljs coffeescript">
+                          npm import { from, Observable } from 'rxjs';
+                // Create an Observable out of a promise
+                const data = from(fetch('/api/endpoint'));
+                // Subscribe to begin listening for async result
+                data.subscribe({
+                next(response) { console.log(response); },
+                error(err) { console.error('Error: ' + err); },
+                complete() { console.log('Completed'); }
+                });</code></pre>
+
+                <aside class="notes">slide 4.3</aside>
+                <aside class="notes"></aside>
             </script>
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade">
-            <h3></h3>
+            <h3>What about pipes?</h3>
+            <ul>
+                <li>You can use pipes to link operators together.</li>
+                <li>Pipes let you combine multiple functions into a one function.</li>
+                <li>The pipe() function takes as its arguments the functions you want to combine</li>
+                <li>It returns a new function that runs compound functions.</li>
+            </ul>
+            <aside class="notes">slide 5</aside>
+        </section>
+        <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade">
+            <p>The pipe() function is also a method on the RxJS Observable, so you use this shorter form to define the
+                same operation:</p>
+            <pre class="fragment code-wrapper visible current-fragment" data-fragment-index="1">
+                      <code data-trim="" data-noescape="" class="hljs coffeescript">
+                          import { of } from 'rxjs';
+            import { filter, map } from 'rxjs/operators';
+            const squareOdd = of(1, 2, 3, 4, 5)
+              .pipe(
+                filter(n => n % 2 !== 0),
+                map(n => n * n)
+              );
+            // Subscribe to get values
+            squareOdd.subscribe(x => console.log(x));
+                         </code></pre>
+            <aside class="notes">slide 6</aside>
         </section>
     </div>
 </div>
 <script src="dist/reveal.js"></script>
 <script src="plugin/notes/notes.js"></script>
+<script src="js/index.js"></script>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
@@ -63,6 +116,7 @@
         center: true,
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
     });
+
 </script>
 </body>
 </html>

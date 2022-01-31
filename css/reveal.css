@@ -1718,7 +1718,6 @@ html.reveal-full-page {
 }
 
 .reveal .speaker-notes {
-  display: none;
   position: absolute;
   width: 33.3333333333%;
   height: 100%;

@@ -1,5 +1,11 @@
 import Deck, { VERSION } from './reveal.js'
-
+import RevealNotes from 'reveal.js/plugin/notes/notes.js';
+let sky = new Reveal({
+	plugins: [Markdown, RevealHighlight, RevealNotes]
+})
+sky.initialize({
+	theme: 'default'
+});
 /**
  * Expose the Reveal class to the window. To create a
  * new instance:
