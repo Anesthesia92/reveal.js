@@ -32,7 +32,15 @@
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade">
             <h3>Why should we use <a href="#https://angular.io/guide/rx-library#the-rxjs-library">RxJS</a>?</h3>
-            <img src="./examples/assets/Rx_Logo.png" alt="Rx-logo" style="height: 300px;">
+            <img src="./examples/assets/Rx_Logo.png" alt="Rx-logo" style="height: 150px;">
+            <pre class="fragment code-wrapper visible current-fragment" data-fragment-index="1">
+            Utility functions are provided by library can be used for:
+                <ul><li>Converting existing code for async operations into observables</li>
+          <li>Iterating through the values in a stream</li>
+          <li>Mapping values to different types</li>
+          <li>Filtering streams</li>
+          <li>Composing multiple streams</li></ul>
+                       </pre>
             <aside class="notes">slide 3</aside>
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade"
@@ -59,8 +67,8 @@
 
                 ## For example:
                 <p>Create an observable from a promise</p>
-                <pre class="code-wrapper visible current-fragment" data-fragment-index="1">
-                      <code data-trim="" data-noescape="" class="hljs coffeescript">
+                <pre class="code-wrapper visible current-fragment fragment" data-fragment-index="1">
+                      <code data-trim="" data-noescape="">
                           npm import { from, Observable } from 'rxjs';
                 // Create an Observable out of a promise
                 const data = from(fetch('/api/endpoint'));
@@ -89,7 +97,7 @@
             <p>The pipe() function is also a method on the RxJS Observable, so you use this shorter form to define the
                 same operation:</p>
             <pre class="fragment code-wrapper visible current-fragment" data-fragment-index="1">
-                      <code data-trim="" data-noescape="" class="hljs coffeescript">
+                      <code data-trim="" data-noescape="">
                           import { of } from 'rxjs';
             import { filter, map } from 'rxjs/operators';
             const squareOdd = of(1, 2, 3, 4, 5)
@@ -101,6 +109,39 @@
             squareOdd.subscribe(x => console.log(x));
                          </code></pre>
             <aside class="notes">slide 6</aside>
+        </section>
+        <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade"
+                 data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+            <script type="text/template">
+                ## Observable names
+                <ul>
+                <li>Because Angular applications are created in TypeScript, you will typically know when a variable is an observable.</li>
+                    <li>You will often see observables named with a “$” sign.</li>
+                    <li>It can help you to scanning through code and looking for observable values.</li>
+                    <li>If you want a property to store the most recent value from an observable.</li>
+                    <li>You can use the same name with/without “$”.</li>
+                    </ul>
+                <aside class="notes">slide 6.1</aside>
+
+                --
+
+                ## For example:
+
+                <p>Naming observables</p>
+                <pre class="code-wrapper visible current-fragment fragment" data-fragment-index="1">
+                      <code data-trim="" data-noescape="">
+                          npm import { from, Observable } from 'rxjs';
+                // Create an Observable out of a promise
+                const data = from(fetch('/api/endpoint'));
+                // Subscribe to begin listening for async result
+                data.subscribe({
+                next(response) { console.log(response); },
+                error(err) { console.error('Error: ' + err); },
+                complete() { console.log('Completed'); }
+                });</code></pre>
+
+                <aside class="notes">slide 6.2</aside>
+            </script>
         </section>
     </div>
 </div>
