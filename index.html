@@ -86,7 +86,15 @@
                 complete() { console.log('Completed'); }
                 });</code></pre>
 
-                <aside class="notes">slide 4.3</aside>
+                <aside class="notes">slide 4.3
+                    The object accepted by the function implements an interface with three methods:
+                    next() - takes a value that will be returned to the handler function;
+                    error() - takes the value returned to the error handler function;
+                    complete() - called to notify "subscribers" about the end of the distribution.
+                    To process the supplied data,
+                    the subscribe() method is used, which accepts three functions:
+                    next, error, and complete - for each of the methods of the constructor object.
+                </aside>
             </script>
         </section>
         <section data-auto-animate data-transition="convex-in concave-out" data-auto-animate-unmatched="fade">
